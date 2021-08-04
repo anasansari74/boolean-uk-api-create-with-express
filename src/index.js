@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
 const db = require("./utils/database");
 const Book = require("./resources/books/model");
@@ -15,7 +15,8 @@ const booksRouter = require("./resources/books/router");
 /* SETUP MIDDLEWARE */
 
 app.use(morgan("dev"));
-app.use(bodyParser.json());
+app.use(express.json());
+// app.use(bodyParser.json());
 
 /* SETUP ROUTES */
 

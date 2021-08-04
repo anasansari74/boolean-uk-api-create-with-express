@@ -1,8 +1,8 @@
 const express = require("express");
 
-const booksRouter = express.Router();
-
 const { findAll, createOne } = require("./controller");
+
+const booksRouter = express.Router();
 
 booksRouter.get("/", findAll);
 

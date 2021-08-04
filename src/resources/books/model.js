@@ -40,11 +40,12 @@ function Book() {
     const sql = `
       INSERT INTO books (title, type, author, topic, publicationDate)
       VALUES ($1, $2, $3, $4, $5)
-      RETURNING *
+      RETURNING *;
     `;
     db.query(sql, [title, type, author, topic, publicationDate]).then(
       result => {
-        callback(result.rown[0]);
+        console.log(result);
+        callback(result.rows[0]);
       }
     );
   }
